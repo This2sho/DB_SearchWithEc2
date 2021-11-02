@@ -1,9 +1,13 @@
 const express = require('express');
 const app = express();
+const cors = require('cors');
+
 
 const sequelize = require('./models').sequelize;
 const bodyParser = require('body-parser')
 sequelize.sync();
+
+app.use(cors());
 
 app.use(express.json());
 app.use(bodyParser.urlencoded({ extended: false }))
@@ -166,5 +170,5 @@ app.post('/search/C', (req, res) => {
 
 const PORT = process.env.PORT || 4000;
 app.listen(PORT, () => {
-    console.log(`Server On : http://localhost:${PORT}/`);
+    console.log(`Server On : http://54.92.229.202:${PORT}/`);
 })
