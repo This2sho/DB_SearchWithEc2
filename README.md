@@ -1,70 +1,29 @@
-# Getting Started with Create React App
+# 구현한 웹페이지 설명
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## 문제 구현
 
-## Available Scripts
+ 1. Customers, Products, Trades 별로 attributes입력창을 만들었고 모든 attribute가 null이 아닐때 입력을 받을 수 있게 만들었습니다.
 
-In the project directory, you can run:
+ 2. 여러개의 데이터를 하나의 파일에서 읽어서 한꺼번에 입력하였고 mysql workbench를 이용하였습니다.
+    (처음 들어왔을때 모든 데이터가 들어왔는지 확인 할 수 있게 각 데이터 별로 띄었습니다.)
 
-### `yarn start`
+ 3. 이 세 가지 종류의 데이터를 or연산을 통해 입력값을 받아서 DB에서 읽어 왔습니다. 
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+ 4. SpecialSearch 탭을 이용하여 
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+  A. 남자보다 여자가 많이 산 상품의 이름 을 SearchA버튼을 누르면 (상품이름, 상품번호, SupplierName)출력하게 하였습니다.
+  B. 주어진 날 이전에 가장 많은 거래(금액기준)가 이루어진 k가지 상품을 날짜와 원하는 개수를 입력하고 SearchB버튼을 누르면 출력(상품이름, 상품번호, SupplierName)하게 하였습니다.
+  C. 하나의 supplier에서 m 번 이상의 제품을 산 고객의 이름은 횟수를 입력하고 SearchC버튼을 입력하였을때 (고객이름, 고객이 해당 Supplier에서 구매한 횟수, SupplierName)출력하게 하였습니다.
 
-### `yarn test`
+\+ 추가로 csv파일로 데이터를 입력하는 버튼을 새로 만들었습니다. (2020-12-26)
+변경된 파일은 App.js와 server.js로 별도로 첨부하였습니다
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## 웹페이지 구현
 
-### `yarn build`
+ 프론트는 react js를 사용하였고 백엔드는 node js의 sequelize모듈을 사용하였습니다.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+ 웹페이지는 AWS의 EC2를 이용하여 호스팅하였습니다.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+ 웹페이지 주소 : http://3.95.64.34:3000
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+※ 현재 AWS Student계정의 Credit이 7.8credit남아서 (하루에 1씩 다는중) 혹시 몰라 구현 영상도 첨부하였습니다.
